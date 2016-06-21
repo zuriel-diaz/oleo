@@ -1,2 +1,2 @@
 # oleo
-Platform that helps to develop cognitive process on childrens.
+Our platform contributes to develop cognitive process on childrens.
