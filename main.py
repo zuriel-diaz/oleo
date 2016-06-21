@@ -39,7 +39,8 @@ def sendNotification(type_button):
 	message = getMessage(type_button)
 	myLcd.clear()
 	# print message
-	print requests.get(URL, None)
+	response = requests.get(URL, None)
+	print response.json()
 	myLcd.write(message)
 	time.sleep(1) 
 	return
