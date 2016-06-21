@@ -28,15 +28,14 @@ app.use('/', routes);
 //app.use('/users', users);
 app.get('/v1/challenges',function(req,res){
   res.setHeader('content-type','application/json');
-  /*
   var data = {
     "challenge_identifier":2,
     "description":"Can you tell us more about X and Y?",
     "solution":"b"
   };
-  */
-  //res.end(JSON.stringify(data));
-  res.end(JSON.stringify(challenges.list()));
+  
+  //res.end(JSON.stringify(challenges.list()));
+  res.end(JSON.stringify(data));
 });
 app.post('/v1/challenges',function(req,res){
   //console.log('challenge_identifier->'+JSON.stringify(req.body));
