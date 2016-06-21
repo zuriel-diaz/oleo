@@ -26,7 +26,12 @@ app.use('/', routes);
 //app.use('/users', users);
 app.get('/v1/challenges',function(req,res){
   res.setHeader('content-type','application/json');
-  res.end(JSON.stringify({"challenge_identifier":2,"description":"description"}));
+  var data = {
+    "challenge_identifier":2,
+    "description":"Can you tell us more about X and Y?",
+    "solution":"b"
+  };
+  res.end(JSON.stringify(data));
 });
 
 // catch 404 and forward to error handler
