@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 
 function read_json_file(){
-	var file = '../data/challenges.json';
+	var file = './data/challenges.json';
 	return fs.readFileSync(file);
 }
 
