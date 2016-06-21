@@ -43,7 +43,7 @@ app.post('/v1/challenges',function(req,res){
   res.setHeader('content-type','application/json');
   if(req.body.id & req.body.content){
     var challenges = challenges.list();
-    console.log('type->'+typeof challenges);
+    console.log(typeof challenges);
   }
   var data = {'test':'test'};
   res.end(JSON.stringify(data));
