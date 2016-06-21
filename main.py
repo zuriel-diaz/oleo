@@ -44,8 +44,10 @@ def sendNotification(type_button):
 	data = {}
 	if (response.status_code == 200):
 		data = json.loads(response.text)
-		if data['solution'] == value_tb
-	myLcd.write(message)
+		if data['solution'] == value_tb:
+			myLcd.write("Excelente vas muy bien!")
+		else:
+			myLcd.write("Lo has pensado bien?")
 	time.sleep(1) 
 	return
 
