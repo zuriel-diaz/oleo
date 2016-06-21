@@ -40,6 +40,8 @@ app.get('/v1/challenges',function(req,res){
 });
 app.post('/v1/challenges',function(req,res){
   res.setHeader('content-type','application/json');
+  console.log('challenge_identifier->'+req.body.id.'|content->'+req.body.content);
+  var data = {'test':'test'};
   res.end(JSON.stringify(data));
 });
 
