@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 //var users = require('./routes/users');
 
+var challenges = require('./modules/challenges');
+
 var app = express();
 
 // view engine setup
@@ -26,11 +28,18 @@ app.use('/', routes);
 //app.use('/users', users);
 app.get('/v1/challenges',function(req,res){
   res.setHeader('content-type','application/json');
+  /*
   var data = {
     "challenge_identifier":2,
     "description":"Can you tell us more about X and Y?",
     "solution":"b"
   };
+  */
+  //res.end(JSON.stringify(data));
+  res.end(JSON.stringify(challenges.list()));
+});
+app.post('/v1/challenges',function(req,res){
+  res.setHeader('content-type','application/json');
   res.end(JSON.stringify(data));
 });
 
