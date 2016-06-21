@@ -39,8 +39,11 @@ app.get('/v1/challenges',function(req,res){
   res.end(JSON.stringify(challenges.list()));
 });
 app.post('/v1/challenges',function(req,res){
-  console.log('challenge_identifier->'+JSON.stringify(req.body));
+  //console.log('challenge_identifier->'+JSON.stringify(req.body));
   res.setHeader('content-type','application/json');
+  if(req.body.id & req.body.content){
+    console.log('id->'+req.body.id+'|content->'+req.body.content);
+  }
   var data = {'test':'test'};
   res.end(JSON.stringify(data));
 });
