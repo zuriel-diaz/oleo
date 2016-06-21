@@ -29,20 +29,22 @@ button_touch = grove.GroveButton(3)
 # Endpoint
 URL = 'http://52.53.244.233:3060/v1/challenges?pretty=true'
 
-def getMessage(type_button):
+def getValueFromTypeButton(type_button):
 	messages = {
-		'pb': 'Yes',
-		'touch': 'No'
+		'pb': 'a',
+		'touch': 'b'
 	}
 	return messages.get(type_button)
 
 def sendNotification(type_button):
-	message = getMessage(type_button)
+	value_tb = getValueFromTypeButton(type_button)
 	myLcd.clear()
 	# print message
 	response = requests.get(URL, None)
+	data = {}
 	if (response.status_code == 200):
-		print json.loads(response.text)
+		data = json.loads(response.text)
+		if data['solution'] == value_tb
 	myLcd.write(message)
 	time.sleep(1) 
 	return
