@@ -33,7 +33,7 @@ def getMessage(type_button):
 
 def sendNotification(type_button):
 	message = getMessage(type_button)
-	myLcd.setCursor(0,0)
+	myLcd.clear()
 	myLcd.write(message)
 	time.sleep(1) 
 	return
