@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 //app.use('/users', users);
-app.get('/v1/challenges/',function(req,res){
+app.get('/v1/challenges',function(req,res){
   res.setHeader('content-type','application/json');
   var data = new Array();
   data.challenge_identifier = 2;
