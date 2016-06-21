@@ -41,6 +41,7 @@ app.get('/v1/challenges',function(req,res){
 app.post('/v1/challenges',function(req,res){
   //console.log('challenge_identifier->'+JSON.stringify(req.body));
   res.setHeader('content-type','application/json');
+  console.log(JSON.stringify(req.body));
   if(req.body.id & req.body.content){
     var challenges = challenges.list();
     console.log(typeof challenges);
