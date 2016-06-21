@@ -15,7 +15,6 @@ import pyupm_i2clcd as lcd
 
 # Initialize Jhd1313m1 at 0x3E (LCD_ADDRESS) and 0x62 (RGB_ADDRESS)
 myLcd = lcd.Jhd1313m1(0, 0x3E, 0x62)
-myLcd.setCursor(0,0)
 # RGB Red
 #myLcd.setColor(255, 0, 0)
 # RGB Blue
@@ -34,6 +33,7 @@ def getMessage(type_button):
 
 def sendNotification(type_button):
 	message = getMessage(type_button)
+	myLcd.setCursor(0,0)
 	myLcd.write(message)
 	time.sleep(1) 
 	return
