@@ -26,8 +26,8 @@ button_touch = grove.GroveButton(3)
 
 def getMessage(type_button):
 	messages = {
-		'pb': 'Push button',
-		'touch': 'Touch'
+		'pb': 'Yes',
+		'touch': 'No'
 	}
 	return messages.get(type_button)
 
