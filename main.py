@@ -44,6 +44,7 @@ def sendNotification(type_button):
 	data = {}
 	if (response.status_code == 200):
 		data = json.loads(response.text)
+		print "Question solution: %s| user solution: %s", data['solution'], value_tb
 		if data['solution'] == value_tb:
 			myLcd.write("Excelente vas muy bien!")
 		else:
