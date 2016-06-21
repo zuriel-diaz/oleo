@@ -21,7 +21,8 @@ button_pb = grove.GroveButton(2)
 button_touch = grove.GroveButton(3)
 
 def sendNotification(type_button):
-	print "test", 
+	print "test"
+	time.sleep(1) 
 	return
 
 # Read inputs
