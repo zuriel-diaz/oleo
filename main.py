@@ -13,6 +13,7 @@ import time
 import pyupm_grove as grove
 import pyupm_i2clcd as lcd
 import requests
+import json
 
 # Initialize Jhd1313m1 at 0x3E (LCD_ADDRESS) and 0x62 (RGB_ADDRESS)
 myLcd = lcd.Jhd1313m1(0, 0x3E, 0x62)
@@ -40,7 +41,8 @@ def sendNotification(type_button):
 	myLcd.clear()
 	# print message
 	response = requests.get(URL, None)
-	print response.json()
+	if (response.status_code == 200):
+		print json.loads(response.text)
 	myLcd.write(message)
 	time.sleep(1) 
 	return
