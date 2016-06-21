@@ -39,7 +39,7 @@ app.get('/v1/challenges',function(req,res){
   res.end(JSON.stringify(challenges.list()));
 });
 app.post('/v1/challenges',function(req,res){
-  console.log('challenge_identifier->'+req.body);
+  console.log('challenge_identifier->'+JSON.stringify(req.body));
   res.setHeader('content-type','application/json');
   var data = {'test':'test'};
   res.end(JSON.stringify(data));
